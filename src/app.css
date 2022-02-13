@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 .nav-logo{
     height: 50px;
     width: auto;
 }
+=======
+.container {
+	@apply w-3/4;
+	@apply p-[20px];
+}
+>>>>>>> 573d447a86b807febffd7809692441b968032c34

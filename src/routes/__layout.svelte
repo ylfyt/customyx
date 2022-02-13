@@ -10,6 +10,6 @@
 	// });
 </script>
 
-<navbar />
-
-<slot />
+<div class="flex justify-center">
+	<slot />
+</div>
