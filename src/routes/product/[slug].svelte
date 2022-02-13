@@ -13,6 +13,7 @@
 <script>
 	import Icon from 'svelte-fa';
 	import { faStar, faCar } from '@fortawesome/free-solid-svg-icons';
+	import VarianField from '../../components/VarianField.svelte';
 
 	export let slug;
 
@@ -71,7 +72,7 @@
 			</div>
 			<div class="bg-secondary text-3xl font-bold p-[10px]">Rp700.000</div>
 			<div>
-				<div class="flex">
+				<div class="flex mb-[10px]">
 					<div class="w-1/4">Shipping</div>
 					<div class="w-3/4 flex items-start ">
 						<Icon class="mt-[5px]" icon={faCar} />
@@ -87,6 +88,7 @@
 						</div>
 					</div>
 				</div>
+				<VarianField />
 			</div>
 		</div>
 	</div>
