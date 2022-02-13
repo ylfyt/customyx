@@ -1,6 +1,6 @@
 <script>
 	import '../app.css';
-	import navbar from '../navbar.svelte';
+	import Navbar from '../components/Navbar.svelte';
 
 	// const button = document.querySelector('#menu-button');
 	// const menu = document.querySelector('#menu');
@@ -10,6 +10,7 @@
 	// });
 </script>
 
+<Navbar />
 <div class="flex justify-center">
 	<slot />
 </div>
