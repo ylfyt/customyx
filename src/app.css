@@ -7,6 +7,11 @@
 	margin: 0;
 }
 
+.nav-logo {
+	height: 50px;
+	width: auto;
+}
+
 .container {
 	@apply w-3/4;
 	@apply p-[20px];
