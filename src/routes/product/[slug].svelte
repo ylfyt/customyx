@@ -13,9 +13,24 @@
 <script>
 	import Icon from 'svelte-fa';
 	import { faStar, faCar } from '@fortawesome/free-solid-svg-icons';
-	import VarianField from '../../components/VarianField.svelte';
+	import VariantField from '../../components/VariantField.svelte';
 
 	export let slug;
+
+	const variants = [
+		{
+			name: 'Warna',
+			options: ['Merah', 'Biru', 'Hijau', 'Orange', 'Kuning']
+		},
+		{
+			name: 'Size',
+			options: ['S', 'M', 'L', 'XL', 'XXL']
+		},
+		{
+			name: 'Bahan',
+			options: ['Kapuk', 'Karet', 'Besi']
+		}
+	];
 
 	const products = [
 		{
@@ -51,7 +66,7 @@
 	const product = products.filter((prod) => prod.slug === slug)[0];
 </script>
 
-<div class="container bg-red-200">
+<div class="container">
 	<div class="flex">
 		<div class="w-2/5">
 			<img src="https://placeimg.com/640/480/any" alt="" />
@@ -61,7 +76,7 @@
 				<img class="w-[75px] h-[75px]" src="https://placeimg.com/640/480/any" alt="" />
 			</div>
 		</div>
-		<div class="ml-[20px] bg-green-200 w-3/5">
+		<div class="ml-[20px] w-3/5">
 			<h1 class="mb-[5px] text-2xl font-semibold">Keyboard Custom Baru</h1>
 			<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">
 				<p class="mr-1 ">4.7</p>
@@ -72,7 +87,7 @@
 			</div>
 			<div class="bg-secondary text-3xl font-bold p-[10px]">Rp700.000</div>
 			<div>
-				<div class="flex mb-[10px]">
+				<div class="flex mt-[20px]">
 					<div class="w-1/4">Shipping</div>
 					<div class="w-3/4 flex items-start ">
 						<Icon class="mt-[5px]" icon={faCar} />
@@ -88,7 +103,9 @@
 						</div>
 					</div>
 				</div>
-				<VarianField />
+				{#each variants as variant}
+					<VariantField {variant} />
+				{/each}
 			</div>
 		</div>
 	</div>
