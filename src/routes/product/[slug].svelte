@@ -1,7 +1,5 @@
 <script context="module">
 	export async function load(pages) {
-		// console.log(pages.params.slug);
-
 		return {
 			props: {
 				slug: pages.params.slug
@@ -14,6 +12,7 @@
 	import Icon from 'svelte-fa';
 	import { faStar, faCar } from '@fortawesome/free-solid-svg-icons';
 	import VariantField from '../../components/VariantField.svelte';
+	import ProductImagesCarousel from '../../components/ProductImagesCarousel.svelte';
 
 	export let slug;
 
@@ -78,14 +77,7 @@
 
 <div class="container">
 	<div class="flex">
-		<div class="w-2/5">
-			<img src="https://placeimg.com/640/480/any" alt="" />
-			<div class="flex gap-3 mt-[20px]">
-				<img class="w-[75px] h-[75px]" src="https://placeimg.com/640/480/any" alt="" />
-				<img class="w-[75px] h-[75px]" src="https://placeimg.com/640/480/any" alt="" />
-				<img class="w-[75px] h-[75px]" src="https://placeimg.com/640/480/any" alt="" />
-			</div>
-		</div>
+		<ProductImagesCarousel />
 		<div class="ml-[20px] w-3/5">
 			<h1 class="mb-[5px] text-2xl font-semibold">Keyboard Custom Baru</h1>
 			<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">
@@ -142,6 +134,7 @@
 			</div>
 		</div>
 	</div>
+	<hr class="mt-[40px]" />
 </div>
 
 <style>
