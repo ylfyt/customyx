@@ -1,6 +1,6 @@
 <script context="module">
 	export async function load(pages) {
-		console.log(pages.params.slug);
+		// console.log(pages.params.slug);
 
 		return {
 			props: {
@@ -19,16 +19,12 @@
 
 	const variants = [
 		{
-			name: 'Warna',
+			name: 'Color',
 			options: ['Merah', 'Biru', 'Hijau', 'Orange', 'Kuning']
 		},
 		{
 			name: 'Size',
 			options: ['S', 'M', 'L', 'XL', 'XXL']
-		},
-		{
-			name: 'Bahan',
-			options: ['Kapuk', 'Karet', 'Besi']
 		}
 	];
 
@@ -64,6 +60,20 @@
 	];
 
 	const product = products.filter((prod) => prod.slug === slug)[0];
+
+	let quantity = 1;
+	const updateTest = () => {
+		if (quantity === null || quantity < 1) {
+			quantity = 1;
+		}
+	};
+
+	const updateQuantity = (val) => {
+		quantity += val;
+		if (quantity < 1) {
+			quantity = 1;
+		}
+	};
 </script>
 
 <div class="container">
@@ -107,6 +117,42 @@
 					<VariantField {variant} />
 				{/each}
 			</div>
+			<!-- Quantity &  Add To Cart-->
+			<div class="mt-[40px]">
+				<div class="flex gap-[40px] w-full">
+					<div class="flex items-center gap-2">
+						<button
+							class="btn text-xl font-bold border-2 w-[50px]"
+							on:click={() => updateQuantity(1)}>+</button
+						>
+						<input
+							type="number"
+							class="bg-red-200 px-2 py-3 w-[100px] shadow-sm rounded-md text-center text-xl font-bold"
+							bind:value={quantity}
+							min="1"
+							on:change={updateTest}
+						/>
+						<button
+							class="btn text-xl font-bold border-2 w-[50px]"
+							on:click={() => updateQuantity(-1)}>-</button
+						>
+					</div>
+					<button type="submit" class="btn bg-primary text-xl font-bold">Add to Cart</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		/* display: none; <- Crashes Chrome on hover */
+		-webkit-appearance: none;
+		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	}
+
+	input[type='number'] {
+		-moz-appearance: textfield; /* Firefox */
+	}
+</style>
