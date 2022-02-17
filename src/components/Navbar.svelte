@@ -1,9 +1,9 @@
-<header>
+<header class="sticky top-0 z-50">
 	<nav
-		class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-white"
+		class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-cream1"
 	>
 		<div class="">
-			<a href="#">
+			<a href="/">
 				<img class="nav-logo ml-5" src="/logolands.png" />
 			</a>
 		</div>
@@ -24,7 +24,7 @@
 			/>
 		</svg>
 
-		<div class="flex justify-center" id="menu">
+		<div class="flex" id="menu">
 			<ul
 				class="
 			pt-4
@@ -34,13 +34,19 @@
 			md:pt-0"
 			>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-purple-400" href="#">Dashboard</a>
+					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="#"
+						>Dashboard</a
+					>
 				</li>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-purple-400" href="#">Product</a>
+					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="#"
+						>Product</a
+					>
 				</li>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-purple-400" href="#">About</a>
+					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="#"
+						>About</a
+					>
 				</li>
 			</ul>
 		</div>

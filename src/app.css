@@ -1,17 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* General */
 * {
 	padding: 0;
 	margin: 0;
 	font-family: 'Poppins', sans-serif;
 }
 
+section > div {
+	border: 1px solid transparent;
+}
+
+.text-red-hat {
+	font-family: 'Red Hat Display', sans-serif;
+}
+
+/* Navbar */
 .nav-logo {
-	height: 50px;
+	height: 7vh;
 	width: auto;
 }
 
@@ -35,4 +46,80 @@
 
 .btn:active {
 	@apply shadow-none;
+}
+
+/* Landing Section */
+.land-logo {
+	width: 75%;
+	height: auto;
+}
+
+.searchbar {
+	float: right;
+	background-color: #d03237;
+	color: white;
+	padding: 6px 10px;
+	width: 120px;
+	border: none;
+	margin-top: 1px;
+	margin-right: 8px;
+	font-family: 'Segoe UI Light', 'Segoe UI', 'Segoe', Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	border-bottom: white solid 2px;
+	transition: 0.3s;
+}
+
+.searchbar::placeholder {
+	color: white;
+	font-family: 'Segoe UI Light', 'Segoe UI', 'Segoe', Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	/* transition: 0.2s; */
+}
+
+.searchbar:focus {
+	width: 400px;
+	font-family: 'Segoe UI Light', 'Segoe UI', 'Segoe', Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	transition: 0.3s;
+	/* Stops the input box from inheriting the styling from the inputs on the request form */
+	border-bottom: white solid 2px;
+	outline: none;
+}
+
+.btn-search {
+	cursor: pointer;
+	color: white;
+	text-decoration: none !important;
+	font-family: 'Segoe UI Light', 'Segoe UI', 'Segoe', Tahoma, Helvetica, Arial, sans-serif;
+	font-size: 1.5em;
+	padding-top: 5px;
+	margin-right: 40px;
+}
+
+.category-card {
+	width: 20%;
+	height: 200px;
+	left: 171px;
+	top: 1072px;
+
+	background: linear-gradient(
+		180deg,
+		#ffffff 66.77%,
+		#ffffff 66.77%,
+		rgba(196, 195, 195, 0.924487) 106.64%,
+		rgba(255, 255, 255, 0.0746528) 106.64%,
+		rgba(255, 255, 255, 0) 106.65%
+	);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 20px;
+}
+
+/* Image Slider */
+
+.carousel-focus:hover {
+	transition: all 0.4s;
+	transform: scale(1.1);
 }
