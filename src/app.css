@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	font-family: 'Poppins', sans-serif;
 }
 
 .nav-logo {
@@ -15,4 +18,21 @@
 .container {
 	@apply w-3/4;
 	@apply p-[20px];
+	/* border: solid 1px rgb(0, 0, 0, 0.2); */
+}
+
+.btn {
+	@apply shadow-sm;
+	@apply px-3;
+	@apply py-2;
+	border-radius: 5px;
+	box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn:active {
+	@apply shadow-none;
 }
