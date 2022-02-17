@@ -4,7 +4,7 @@
 	>
 		<div class="">
 			<a href="/">
-				<img class="nav-logo ml-5" src="/logolands.png" />
+				<img class="nav-logo ml-5" src="/logolands.png" alt="" />
 			</a>
 		</div>
 
@@ -34,17 +34,18 @@
 			md:pt-0"
 			>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="#"
-						>Dashboard</a
+					<a
+						class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat"
+						href="/dashboard">Dashboard</a
 					>
 				</li>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="#"
+					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="/product"
 						>Product</a
 					>
 				</li>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="#"
+					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="/about"
 						>About</a
 					>
 				</li>
