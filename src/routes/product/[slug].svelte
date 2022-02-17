@@ -13,6 +13,9 @@
 	import { faStar, faCar } from '@fortawesome/free-solid-svg-icons';
 	import VariantField from '../../components/VariantField.svelte';
 	import ProductImagesCarousel from '../../components/ProductImagesCarousel.svelte';
+	import StoreDetail from '../../components/StoreDetail.svelte';
+	import ProductSpec from '../../components/ProductSpec.svelte';
+	import ProductDescription from '../../components/ProductDescription.svelte';
 
 	export let slug;
 
@@ -75,11 +78,11 @@
 	};
 </script>
 
-<div class="container">
-	<div class="flex">
+<div class="w-full flex items-center flex-col gap-[20px]">
+	<div class="container flex">
 		<ProductImagesCarousel />
 		<div class="ml-[20px] w-3/5">
-			<h1 class="mb-[5px] text-2xl font-semibold">Keyboard Custom Baru</h1>
+			<h1 class="mb-[5px] text-2xl font-bold">Keyboard Custom Baru</h1>
 			<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">
 				<p class="mr-1 ">4.7</p>
 				<Icon class="mr-1 text-yellow-400" icon={faStar} />
@@ -95,12 +98,16 @@
 						<Icon class="mt-[5px]" icon={faCar} />
 						<div class="ml-1 w-full">
 							<div class="flex">
+								<div class="w-[50px] ">From</div>
+								<div class="font-medium">Kota Jakarta</div>
+							</div>
+							<div class="flex">
 								<div class="w-[50px] ">To</div>
 								<div class="font-bold">Kota Bandung</div>
 							</div>
 							<div class="flex">
 								<div class="w-[50px] ">Fee</div>
-								<div class="font-semibold">Rp0 - Rp20.000</div>
+								<div class="font-medium">Rp0 - Rp20.000</div>
 							</div>
 						</div>
 					</div>
@@ -110,12 +117,13 @@
 				{/each}
 			</div>
 			<!-- Quantity &  Add To Cart-->
-			<div class="mt-[40px]">
-				<div class="flex gap-[40px] w-full">
+			<div class="flex mt-[20px]">
+				<div class="w-1/4">Quantity</div>
+				<div class="w-3/4 ">
 					<div class="flex items-center gap-2">
 						<button
 							class="btn text-xl font-bold border-2 w-[50px]"
-							on:click={() => updateQuantity(1)}>+</button
+							on:click={() => updateQuantity(-1)}>-</button
 						>
 						<input
 							type="number"
@@ -124,17 +132,35 @@
 							min="1"
 							on:change={updateTest}
 						/>
+
 						<button
 							class="btn text-xl font-bold border-2 w-[50px]"
-							on:click={() => updateQuantity(-1)}>-</button
+							on:click={() => updateQuantity(1)}>+</button
 						>
 					</div>
+				</div>
+			</div>
+			<div class="flex mt-[20px]">
+				<div class="w-1/4" />
+				<div class="w-3/4 ">
 					<button type="submit" class="btn bg-primary text-xl font-bold">Add to Cart</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<hr class="mt-[40px]" />
+
+	<div class="container">
+		<hr class=" mb-[10px]" />
+		<StoreDetail />
+		<hr class=" mt-[10px]" />
+	</div>
+
+	<div class="container bg-gray-100">
+		<ProductSpec />
+	</div>
+	<div class="container">
+		<ProductDescription />
+	</div>
 </div>
 
 <style>
