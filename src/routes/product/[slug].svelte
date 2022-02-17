@@ -1,8 +1,12 @@
 <script context="module">
+	import db from '../../utils/db';
+
 	export async function load(pages) {
+		const slug = pages.params.slug;
+		const product = db.findProductBySlug(slug);
 		return {
 			props: {
-				slug: pages.params.slug
+				product: product
 			}
 		};
 	}
@@ -17,7 +21,8 @@
 	import ProductSpec from '../../components/ProductSpec.svelte';
 	import ProductDescription from '../../components/ProductDescription.svelte';
 
-	export let slug;
+	export let product;
+
 	let quantity = 1;
 	const updateTest = () => {
 		if (quantity === null || quantity < 1) {
@@ -31,88 +36,13 @@
 			quantity = 1;
 		}
 	};
-
-	const product = {
-		id: 1,
-		name: 'Keyboard Mechanical Custom',
-		slug: 'keyboard-custom-baru-31230213212',
-		storeId: 2,
-		sold: 4050,
-		price: 700000,
-		rating: 4.9,
-		numRating: 3200,
-		address: {
-			city: 'Kota Surabaya'
-		},
-		store: {
-			name: 'Toko Jaya Bangunan',
-			image: 'https://placeimg.com/640/480/2',
-			sold: 23000,
-			rating: 4.5,
-			numRating: 8750,
-			lastActive: 450,
-			note: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere vero libero veniam quisquam dolor voluptatibus illum fugiat magnam soluta. Neque odio alias possimus, necessitatibus'
-		},
-		variants: [
-			{
-				name: 'Color',
-				options: ['Merah', 'Biru', 'Hijau', 'Orange', 'Kuning']
-			},
-			{
-				name: 'Size',
-				options: ['S', 'M', 'L', 'XL', 'XXL']
-			}
-		],
-
-		images: [
-			{
-				url: 'https://placeimg.com/640/480/1',
-				caption: 'Photo 1'
-			},
-			{
-				url: 'https://placeimg.com/640/480/2',
-				caption: 'Photo 2'
-			},
-			{
-				url: 'https://placeimg.com/640/480/3',
-				caption: 'Photo 3'
-			}
-		],
-		description: {
-			specifications: [
-				{
-					title: 'Kondisi',
-					value: 'Baru'
-				},
-				{
-					title: 'Garansi',
-					value: '1 Tahun'
-				},
-				{
-					title: 'Tegangan',
-					value: '12v'
-				}
-			],
-			text: `
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?
-			<br/>
-			<br/>
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?
-			<br/>
-			<br/>
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?
-			<br/>
-			<br/>
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?ss
-			<br/>
-			`
-		}
-	};
 </script>
 
 <div class="w-full flex items-center flex-col gap-[20px]">
 	<div class="container flex">
-		<ProductImagesCarousel images={product.images} />
+		<div class="w-2/5">
+			<ProductImagesCarousel images={product.images} />
+		</div>
 		<div class="ml-[20px] w-3/5">
 			<h1 class="mb-[5px] text-2xl font-bold">{product.name}</h1>
 			<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">

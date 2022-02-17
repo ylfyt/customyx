@@ -12,12 +12,12 @@
 	};
 </script>
 
-<div>
+<div class="w-full">
 	<div class="slideshow-container">
 		{#each images as img, i}
 			<div class={i === idx ? 'mySlides fade block' : 'mySlides fade hidden'}>
 				<div class="numbertext text-textColorPrimary">{i + 1} / {num}</div>
-				<img src={img.url} style="width:100%" alt="" />
+				<img src={img.url} class="h-[400px]" style="width:100%" alt="" />
 				<div class="text text-textColorPrimary">{img.caption}</div>
 			</div>
 		{/each}
