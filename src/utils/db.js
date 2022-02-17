@@ -16,15 +16,15 @@ const products = [
 		slug: 'keyboard-mechanical-custom-31230213212',
 		storeId: 2,
 		sold: 4050,
-		price: 700000,
+		price: 525000,
 		rating: 4.9,
 		numRating: 3200,
 		address: {
 			city: 'Kota Surabaya'
 		},
 		store: {
-			name: 'Toko Jaya Bangunan',
-			image: 'https://placeimg.com/640/480/2',
+			name: 'Toko Jaya',
+			image: '/img/keyboard1.jpg',
 			sold: 23000,
 			rating: 4.5,
 			numRating: 8750,
@@ -35,43 +35,26 @@ const products = [
 			variants: [
 				{
 					name: 'Color',
-					options: ['Merah', 'Biru', 'Hijau', 'Orange', 'Kuning']
+					options: ['White', 'Black']
 				},
 				{
-					name: 'Size',
-					options: ['S', 'M', 'L', 'XL']
+					name: 'Switch',
+					options: ['Red', 'Brown', 'Black']
 				}
 			],
-			priceMapping: [
-				{
-					choice: ['any', 'S'],
-					price: 700000
-				},
-				{
-					choice: ['any', 'M'],
-					price: 730000
-				},
-				{
-					choice: ['any', 'L'],
-					price: 760000
-				},
-				{
-					choice: ['any', 'XL'],
-					price: 800000
-				}
-			]
+			priceMapping: []
 		},
 		images: [
 			{
-				url: 'https://placeimg.com/640/480/1',
+				url: '/img/keyboard0.jpg',
 				caption: 'Photo 1'
 			},
 			{
-				url: 'https://placeimg.com/640/480/2',
+				url: '/img/keyboard1.jpg',
 				caption: 'Photo 2'
 			},
 			{
-				url: 'https://placeimg.com/640/480/3',
+				url: '/img/keyboard2.jpg',
 				caption: 'Photo 3'
 			}
 		],
@@ -107,19 +90,19 @@ const products = [
 	},
 	{
 		id: 2,
-		name: 'DIY Lampu Tidur Acrilic',
-		slug: 'diy-lampu-tidur-acrilic-31230213212',
+		name: 'DIY Lampu Tidur',
+		slug: 'diy-lampu-tidur-31230213212',
 		storeId: 2,
 		sold: 100,
-		price: 100000,
+		price: 124000,
 		rating: 4.8,
 		numRating: 80,
 		address: {
 			city: 'Kota Surabaya'
 		},
 		store: {
-			name: 'Toko Jaya Bangunan',
-			image: 'https://placeimg.com/640/480/2',
+			name: 'Toko Jaya',
+			image: '/img/keyboard1.jpg',
 			sold: 23000,
 			rating: 4.5,
 			numRating: 8750,
@@ -140,7 +123,7 @@ const products = [
 			priceMapping: [
 				{
 					choice: ['any', 'S'],
-					price: 100000
+					price: 124000
 				},
 				{
 					choice: ['any', 'M'],
@@ -151,16 +134,8 @@ const products = [
 
 		images: [
 			{
-				url: 'https://picsum.photos/id/1/200/300',
-				caption: 'Photo 1'
-			},
-			{
-				url: 'https://picsum.photos/id/2/200/300',
-				caption: 'Photo 2'
-			},
-			{
-				url: 'https://picsum.photos/id/3/200/300',
-				caption: 'Photo 3'
+				url: '/img/lamp0.jpg',
+				caption: 'Mood Lamp'
 			}
 		],
 		description: {
@@ -194,15 +169,15 @@ const products = [
 		slug: 'custom-gitar-31230213212',
 		storeId: 2,
 		sold: 1200,
-		price: 400000,
+		price: 750000,
 		rating: 4.6,
 		numRating: 990,
 		address: {
 			city: 'Kota Surabaya'
 		},
 		store: {
-			name: 'Toko Jaya Bangunan',
-			image: 'https://placeimg.com/640/480/2',
+			name: 'Toko Jaya',
+			image: '/img/keyboard1.jpg',
 			sold: 23000,
 			rating: 4.5,
 			numRating: 8750,
@@ -211,16 +186,16 @@ const products = [
 		},
 		images: [
 			{
-				url: 'https://picsum.photos/id/4/200/300',
-				caption: 'Photo 1'
+				url: '/img/guitar0.jpg',
+				caption: 'Guitar 1'
 			},
 			{
-				url: 'https://picsum.photos/id/5/200/300',
-				caption: 'Photo 2'
+				url: '/img/guitar1.jpg',
+				caption: 'Guitar 2'
 			},
 			{
-				url: 'https://picsum.photos/id/5/200/300',
-				caption: 'Photo 3'
+				url: '/img/guitar2.jpg',
+				caption: 'Guitar 3'
 			}
 		],
 		description: {
@@ -232,10 +207,6 @@ const products = [
 				{
 					title: 'Garansi',
 					value: '1 Tahun'
-				},
-				{
-					title: 'Tegangan',
-					value: '5v'
 				}
 			],
 			text: `

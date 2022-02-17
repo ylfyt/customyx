@@ -10,7 +10,7 @@
 	<div class="w-1/4">{variant.name}</div>
 	<div class="w-3/4 ">
 		<select name="" id="" class="variant-drop outline-secondary" bind:value={co}>
-			<option value="" disabled selected>Choose {variant.name}</option>
+			<option value="" disabled selected>Select {variant.name}</option>
 			{#each variant.options as option}
 				<option value={option}>{option}</option>
 			{/each}
