@@ -1,14 +1,18 @@
 <script>
 	export let variant;
+	export let updateChoice;
+	export let idx;
+	let co = '';
+	$: co && updateChoice(idx, co);
 </script>
 
 <div class="flex mt-[20px]">
 	<div class="w-1/4">{variant.name}</div>
 	<div class="w-3/4 ">
-		<select name="" id="" class="variant-drop">
+		<select name="" id="" class="variant-drop" bind:value={co}>
 			<option value="" disabled selected>Choose {variant.name}</option>
 			{#each variant.options as option}
-				<option value="hijau">{option}</option>
+				<option value={option}>{option}</option>
 			{/each}
 		</select>
 	</div>

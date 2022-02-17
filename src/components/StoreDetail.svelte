@@ -8,7 +8,9 @@
 </script>
 
 <div class="flex">
-	<img class="rounded-full w-[{imageSize}px] h-[{imageSize}px] " src={store.image} alt="" />
+	<div class="w-[100px] h-[100px]">
+		<img class="rounded-full w-[100px] h-[100px] " src={store.image} alt="" />
+	</div>
 	<div class="flex justify-between w-full ml-[20px]">
 		<div class="flex flex-col justify-between">
 			<div>
@@ -36,7 +38,7 @@
 				</div>
 			</div>
 		</div>
-		<p class="w-2/5">
+		<p class="store-note w-2/5">
 			{store.note}
 		</p>
 		<div class="flex items-center gap-[20px]">
@@ -45,3 +47,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.store-note {
+		overflow: hidden;
+	}
+</style>

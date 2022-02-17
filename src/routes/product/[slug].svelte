@@ -22,8 +22,41 @@
 	import ProductDescription from '../../components/ProductDescription.svelte';
 
 	export let product;
-
+	console.log(product);
 	let quantity = 1;
+	let price = product.price;
+	let choice = [];
+	if (typeof product.type !== 'undefined') {
+		product.type.variants.forEach((element) => {
+			choice.push('');
+		});
+	}
+
+	const updateChoice = (idx, co) => {
+		choice[idx] = co;
+	};
+
+	$: choice && updatePrice();
+
+	const updatePrice = () => {
+		let temp = product.price;
+		if (product.type) {
+			product.type.priceMapping.forEach((el) => {
+				for (let i = 0; i < el.choice.length; i++) {
+					if (el.choice[i] === 'any') {
+						if (choice[i] !== '') continue;
+					}
+					if (choice[i] !== el.choice[i]) {
+						return;
+					}
+				}
+				temp = el.price;
+			});
+		}
+
+		price = temp;
+	};
+
 	const updateTest = () => {
 		if (quantity === null || quantity < 1) {
 			quantity = 1;
@@ -60,7 +93,7 @@
 				</p>
 			</div>
 			<div class="bg-secondary text-3xl font-bold p-[10px]">
-				Rp{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+				Rp{(price * quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
 			</div>
 			<div>
 				<div class="flex mt-[20px]">
@@ -83,9 +116,11 @@
 						</div>
 					</div>
 				</div>
-				{#each product.variants as variant}
-					<VariantField {variant} />
-				{/each}
+				{#if product.type}
+					{#each product.type.variants as variant, i}
+						<VariantField {variant} {updateChoice} idx={i} />
+					{/each}
+				{/if}
 			</div>
 			<!-- Quantity &  Add To Cart-->
 			<div class="flex mt-[20px]">
