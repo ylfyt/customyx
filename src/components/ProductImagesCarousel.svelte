@@ -1,21 +1,8 @@
 <script>
-	const imgs = [
-		{
-			url: 'https://placeimg.com/640/480/1',
-			caption: 'Photo 1'
-		},
-		{
-			url: 'https://placeimg.com/640/480/2',
-			caption: 'Photo 2'
-		},
-		{
-			url: 'https://placeimg.com/640/480/3',
-			caption: 'Photo 3'
-		}
-	];
+	export let images;
 
 	let idx = 0;
-	const num = imgs.length;
+	const num = images.length;
 
 	const updateSlide = (val) => {
 		idx += val;
@@ -27,7 +14,7 @@
 
 <div>
 	<div class="slideshow-container">
-		{#each imgs as img, i}
+		{#each images as img, i}
 			<div class={i === idx ? 'mySlides fade block' : 'mySlides fade hidden'}>
 				<div class="numbertext text-textColorPrimary">{i + 1} / {num}</div>
 				<img src={img.url} style="width:100%" alt="" />
@@ -41,7 +28,7 @@
 	</div>
 	<br />
 	<div style="text-align:center">
-		{#each imgs as _, i}
+		{#each images as _, i}
 			<span class={i === idx ? 'dot active' : 'dot'} on:click={() => (idx = i)} />
 		{/each}
 	</div>

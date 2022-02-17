@@ -18,51 +18,6 @@
 	import ProductDescription from '../../components/ProductDescription.svelte';
 
 	export let slug;
-
-	const variants = [
-		{
-			name: 'Color',
-			options: ['Merah', 'Biru', 'Hijau', 'Orange', 'Kuning']
-		},
-		{
-			name: 'Size',
-			options: ['S', 'M', 'L', 'XL', 'XXL']
-		}
-	];
-
-	const products = [
-		{
-			id: 1,
-			name: 'Keyboard-custom-baru',
-			slug: 'keyboard-custom-baru-31230213212',
-			storeId: 2,
-			description: 'Keyboard mechanical custom, bisa warna apa saja'
-		},
-		{
-			id: 2,
-			name: 'Keyboard-custom',
-			slug: 'keyboard-custom-31230213212',
-			storeId: 2,
-			description: 'Keyboard mechanical custom, bisa warna apa saja'
-		},
-		{
-			id: 3,
-			name: 'Rakit PC',
-			slug: 'rakit-pc-31230213212214',
-			storeId: 3,
-			description: 'Keyboard mechanical custom, bisa warna apa saja'
-		},
-		{
-			id: 4,
-			name: 'DIY Meja Belajar',
-			slug: 'diy-meja-belajar-31230213212',
-			storeId: 4,
-			description: 'Keyboard mechanical custom, bisa warna apa saja'
-		}
-	];
-
-	const product = products.filter((prod) => prod.slug === slug)[0];
-
 	let quantity = 1;
 	const updateTest = () => {
 		if (quantity === null || quantity < 1) {
@@ -76,21 +31,107 @@
 			quantity = 1;
 		}
 	};
+
+	const product = {
+		id: 1,
+		name: 'Keyboard Mechanical Custom',
+		slug: 'keyboard-custom-baru-31230213212',
+		storeId: 2,
+		sold: 4050,
+		price: 700000,
+		rating: 4.9,
+		numRating: 3200,
+		address: {
+			city: 'Kota Surabaya'
+		},
+		store: {
+			name: 'Toko Jaya Bangunan',
+			image: 'https://placeimg.com/640/480/2',
+			sold: 23000,
+			rating: 4.5,
+			numRating: 8750,
+			lastActive: 450,
+			note: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere vero libero veniam quisquam dolor voluptatibus illum fugiat magnam soluta. Neque odio alias possimus, necessitatibus'
+		},
+		variants: [
+			{
+				name: 'Color',
+				options: ['Merah', 'Biru', 'Hijau', 'Orange', 'Kuning']
+			},
+			{
+				name: 'Size',
+				options: ['S', 'M', 'L', 'XL', 'XXL']
+			}
+		],
+
+		images: [
+			{
+				url: 'https://placeimg.com/640/480/1',
+				caption: 'Photo 1'
+			},
+			{
+				url: 'https://placeimg.com/640/480/2',
+				caption: 'Photo 2'
+			},
+			{
+				url: 'https://placeimg.com/640/480/3',
+				caption: 'Photo 3'
+			}
+		],
+		description: {
+			specifications: [
+				{
+					title: 'Kondisi',
+					value: 'Baru'
+				},
+				{
+					title: 'Garansi',
+					value: '1 Tahun'
+				},
+				{
+					title: 'Tegangan',
+					value: '12v'
+				}
+			],
+			text: `
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?
+			<br/>
+			<br/>
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?
+			<br/>
+			<br/>
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?
+			<br/>
+			<br/>
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit suscipit, vero est, reiciendis repellat, accusantium officia illo voluptatibus eum repellendus corporis iure cumque sunt molestias quisquam qui aliquid rerum dolorem?ss
+			<br/>
+			`
+		}
+	};
 </script>
 
 <div class="w-full flex items-center flex-col gap-[20px]">
 	<div class="container flex">
-		<ProductImagesCarousel />
+		<ProductImagesCarousel images={product.images} />
 		<div class="ml-[20px] w-3/5">
-			<h1 class="mb-[5px] text-2xl font-bold">Keyboard Custom Baru</h1>
+			<h1 class="mb-[5px] text-2xl font-bold">{product.name}</h1>
 			<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">
-				<p class="mr-1 ">4.7</p>
+				<p class="mr-1 ">{product.rating}</p>
 				<Icon class="mr-1 text-yellow-400" icon={faStar} />
-				<p>(2.7k ratings)</p>
+				<p>
+					({product.numRating > 1100
+						? `${Math.round((product.numRating / 1000) * 100) / 100}k`
+						: product.numRating} ratings)
+				</p>
 				<p class="mr-3 ml-2 text-textColorPrimary font-semibold">|</p>
-				<p>2.7k Sold</p>
+				<p>
+					{product.sold > 1100 ? `${Math.round((product.sold / 1000) * 100) / 100}k` : product.sold}
+					Sold
+				</p>
 			</div>
-			<div class="bg-secondary text-3xl font-bold p-[10px]">Rp700.000</div>
+			<div class="bg-secondary text-3xl font-bold p-[10px]">
+				Rp{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+			</div>
 			<div>
 				<div class="flex mt-[20px]">
 					<div class="w-1/4">Shipping</div>
@@ -99,7 +140,7 @@
 						<div class="ml-1 w-full">
 							<div class="flex">
 								<div class="w-[50px] ">From</div>
-								<div class="font-medium">Kota Jakarta</div>
+								<div class="font-medium">{product.address.city}</div>
 							</div>
 							<div class="flex">
 								<div class="w-[50px] ">To</div>
@@ -112,7 +153,7 @@
 						</div>
 					</div>
 				</div>
-				{#each variants as variant}
+				{#each product.variants as variant}
 					<VariantField {variant} />
 				{/each}
 			</div>
@@ -151,15 +192,15 @@
 
 	<div class="container">
 		<hr class=" mb-[10px]" />
-		<StoreDetail />
+		<StoreDetail store={product.store} />
 		<hr class=" mt-[10px]" />
 	</div>
 
 	<div class="container bg-gray-100">
-		<ProductSpec />
+		<ProductSpec specifications={product.description.specifications} />
 	</div>
 	<div class="container">
-		<ProductDescription />
+		<ProductDescription description={product.description.text} />
 	</div>
 </div>
 
