@@ -1,13 +1,13 @@
 <script>
-import CategCard from "../../components/CategCard.svelte";
-import ProductCard from "../../components/ProductCard.svelte";
-
+	import CategCard from '../../components/CategCard.svelte';
+	import ProductCard from '../../components/ProductCard.svelte';
 </script>
+
 <div class="search-filter flex justify-center flex-row h-11">
-	<a href="#" >
-        <img src="/filter.png" alt="filter" class="h-11 " />
-    </a>
-        
+	<a href="#">
+		<img src="/filter.png" alt="filter" class="h-11 " />
+	</a>
+
 	<form action="" class="ml-5 relative ">
 		<input
 			type="text"
@@ -17,42 +17,43 @@ import ProductCard from "../../components/ProductCard.svelte";
 			class="shadow-md border-2 rounded-2xl p-2 relative"
 			placeholder="   Search Desired Costume Product..."
 		/>
-        <a href="#" type="submit" class="relative right-12 top-1"><img src="/search.png" class="h-6 opacity-50" alt=""></a>
+		<a href="#" type="submit" class="relative right-12 top-1"
+			><img src="/search.png" class="h-6 opacity-50" alt="" /></a
+		>
 	</form>
 </div>
 
-<div class="banner mx-auto flex flex-row bg-blue-500 mt-6 rounded-xl w-11/12 h-60" >
-    <img src="/logo.png" alt="">
-    <h1 class="">"Type Something Here!"</h1>
+<div class="banner mx-auto flex flex-row bg-blue-500 mt-6 rounded-xl w-11/12 h-60">
+	<img src="/logo.png" alt="" />
+	<h1 class="">"Type Something Here!"</h1>
 </div>
 
 <div class="category w-11/12 mx-auto mt-5">
-    <div class="categ flex flex-row justify-between">
-        <h2 class="text-3xl">Category</h2>
-        <a href="#" class="text-lg mt-2 mr-4 opacity-80">See More</a>
-    </div>
-    <div class="categ-cards flex flex-row justify-around mt-3">
-        <CategCard />
-        <CategCard />
-        <CategCard />
-        <CategCard />
-        <CategCard />
-
-    </div>
+	<div class="categ flex flex-row justify-between">
+		<h2 class="text-3xl">Category</h2>
+		<a href="#" class="text-lg mt-2 mr-4 opacity-80">See More</a>
+	</div>
+	<div class="categ-cards flex flex-row justify-around mt-3">
+		<CategCard />
+		<CategCard />
+		<CategCard />
+		<CategCard />
+		<CategCard />
+	</div>
 </div>
 
-<div class="product-list flex flex-row flex-wrap content-start items-stretch justify-around w-11/12 mx-auto mt-5">
-
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    
+<div
+	class="product-list flex flex-row flex-wrap content-start items-stretch justify-around w-11/12 mx-auto mt-5"
+>
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
+	<ProductCard />
 </div>
