@@ -1,7 +1,5 @@
-<header class="sticky top-0 z-50">
-	<nav
-		class="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-cream1"
-	>
+<header class="flex justify-center sticky top-0 z-50 bg-cream1">
+	<nav class="flex flex-wrap items-center justify-between w-4/5 py-[10px] text-lg text-gray-700  ">
 		<div class="">
 			<a href="/">
 				<img class="nav-logo ml-5" src="/logolands.png" alt="" />

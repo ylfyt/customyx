@@ -1,5 +1,5 @@
 <div
-	class="categ-card w-1/6 h-14 rounded-3xl bg-blue-600 flex flex-row group  hover:cursor-pointer "
+	class="categ-card w-1/6 h-14 rounded-3xl bg-primary flex flex-row group  hover:cursor-pointer items-center shadow-lg"
 >
 	<div
 		style="background-image: url('/music.png');  background-size: cover; background-color: white;"

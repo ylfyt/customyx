@@ -6,6 +6,9 @@ export default {
 		} else {
 			return prds[0];
 		}
+	},
+	findAllProduct: () => {
+		return products;
 	}
 };
 
