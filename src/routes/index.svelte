@@ -56,13 +56,13 @@
 	<div class="flex items-center justify-center w-full h-3/4 py-24 sm:py-8 px-5">
 		<div class="w-full relative flex items-center justify-center">
 			<button aria-label="slide backward" class="prev" on:click={goPrev}> &#10094; </button>
-			<div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+			<div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden py-8">
 				<div
 					bind:this={slider}
 					class="flex items-center justify-start transition ease-out duration-700"
 				>
-					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="electronics.png" alt="Sea" class="rounded-t-lg" />
+					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-0">
+						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Electronics</h2>
@@ -70,26 +70,13 @@
 					</div>
 
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="electronics.png" alt="Sea" class="rounded-t-lg" />
-
-						<div class="p-6">
-							<h2 class="mb-2 text-md text-center">Households</h2>
-						</div>
-					</div>
-					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
 						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Crafts and Gifts</h2>
 						</div>
 					</div>
-					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
 
-						<div class="p-6">
-							<h2 class="mb-2 text-md text-center">Musics</h2>
-						</div>
-					</div>
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
 						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
 
@@ -231,3 +218,38 @@
 		</div>
 	</div>
 </footer>
+
+<style>
+	.prev,
+	.next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		margin-top: -22px;
+		padding: 16px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+		background-color: rgba(0, 0, 0, 0.1);
+		z-index: 10;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+	.prev {
+		left: 0;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover,
+	.next:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+</style>
