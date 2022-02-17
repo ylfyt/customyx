@@ -78,7 +78,7 @@
 		</div>
 		<div class="ml-[20px] w-3/5">
 			<h1 class="mb-[5px] text-2xl font-bold">{product.name}</h1>
-			<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">
+			<div class="mb-[5px] flex items-center text-sm font-medium text-primary">
 				<p class="mr-1 ">{product.rating}</p>
 				<Icon class="mr-1 text-yellow-400" icon={faStar} />
 				<p>
@@ -92,14 +92,11 @@
 					Sold
 				</p>
 			</div>
-			<div class="bg-secondary text-3xl font-bold p-[10px]">
-				Rp{(price * quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
-			</div>
+
 			<div>
 				<div class="flex mt-[20px]">
 					<div class="w-1/4">Shipping</div>
 					<div class="w-3/4 flex items-start ">
-						<Icon class="mt-[5px]" icon={faCar} />
 						<div class="ml-1 w-full">
 							<div class="flex">
 								<div class="w-[50px] ">From</div>
@@ -128,28 +125,31 @@
 				<div class="w-3/4 ">
 					<div class="flex items-center gap-2">
 						<button
-							class="btn text-xl font-bold border-2 w-[50px]"
+							class="btn text-xl font-bold border-[1px] w-[50px]"
 							on:click={() => updateQuantity(-1)}>-</button
 						>
 						<input
 							type="number"
-							class="bg-red-200 px-2 py-3 w-[100px] shadow-sm rounded-md text-center text-xl font-bold"
+							class="bg-secondary px-2 py-3 w-[100px] shadow-sm rounded-md text-center text-xl font-bold"
 							bind:value={quantity}
 							min="1"
 							on:change={updateTest}
 						/>
 
 						<button
-							class="btn text-xl font-bold border-2 w-[50px]"
+							class="btn text-xl font-bold border-[1px] w-[50px]"
 							on:click={() => updateQuantity(1)}>+</button
 						>
 					</div>
 				</div>
 			</div>
-			<div class="flex mt-[20px]">
-				<div class="w-1/4" />
-				<div class="w-3/4 ">
-					<button type="submit" class="btn bg-primary text-xl font-bold">Add to Cart</button>
+			<div class="flex mt-[20px] bg-secondary py-[10px]">
+				<div class="w-1/4 " />
+				<div class="w-3/4 flex items-center">
+					<button type="submit" class="btn bg-primary text-base font-medium">Add to Cart</button>
+					<div class=" text-3xl font-bold ml-[30px]">
+						Rp{(price * quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -161,7 +161,7 @@
 		<hr class=" mt-[10px]" />
 	</div>
 
-	<div class="container bg-gray-100">
+	<div class="container bg-secondary">
 		<ProductSpec specifications={product.description.specifications} />
 	</div>
 	<div class="container">

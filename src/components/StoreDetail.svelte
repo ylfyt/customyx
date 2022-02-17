@@ -7,12 +7,12 @@
 	const imageSize = 100;
 </script>
 
-<div class="flex">
-	<div class="w-[100px] h-[100px]">
-		<img class="rounded-full w-[100px] h-[100px] " src={store.image} alt="" />
+<div class="flex ">
+	<div class="w-[125px]">
+		<img class="rounded-full w-[{imageSize}px] h-[{imageSize}px]" src={store.image} alt="" />
 	</div>
 	<div class="flex justify-between w-full ml-[20px]">
-		<div class="flex flex-col justify-between">
+		<div class="flex flex-col">
 			<div>
 				<p class="text-2xl font-semibold">{store.name}</p>
 				<p class="text-gray-500">
@@ -21,7 +21,7 @@
 						: `Online`}
 				</p>
 			</div>
-			<div>
+			<div class="mt-[10px]">
 				<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">
 					<p class="mr-1 ">{store.rating}</p>
 					<Icon class="mr-1 text-yellow-400" icon={faStar} />
@@ -51,5 +51,8 @@
 <style>
 	.store-note {
 		overflow: hidden;
+	}
+	img {
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 	}
 </style>

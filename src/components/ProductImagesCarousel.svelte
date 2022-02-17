@@ -26,7 +26,6 @@
 		<button class="prev" on:click={() => updateSlide(-1)}>&#10094;</button>
 		<button class="next" on:click={() => updateSlide(1)}>&#10095;</button>
 	</div>
-	<br />
 	<div style="text-align:center">
 		{#each images as _, i}
 			<span class={i === idx ? 'dot active' : 'dot'} on:click={() => (idx = i)} />
@@ -92,11 +91,10 @@
 	/* The dots/bullets/indicators */
 	.dot {
 		cursor: pointer;
-		height: 15px;
-		width: 15px;
-		margin: 0 2px;
+		height: 4px;
+		width: 20px;
+		margin: 0 5px;
 		background-color: #bbb;
-		border-radius: 50%;
 		display: inline-block;
 		transition: background-color 0.6s ease;
 	}
