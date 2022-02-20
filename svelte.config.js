@@ -1,14 +1,9 @@
-import static_adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-netlify';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: static_adapter(),
-		paths: {
-			base: '/hmelse',
-			assets: 'hmelse'
-		},
-		target: '#svelte'
+		adapter: adapter()
 	}
 };
 
