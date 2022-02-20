@@ -1,4 +1,3 @@
-
 <div class="cart-card w-11/12 bg-blue-500 mx-auto h-48 rounded-lg mb-5">
 	<div class="flex flex-row h-1/12 justify-between">
 		<strong class="text-xl align-center cursor-pointer cart-del ml-1">&times;</strong>
@@ -19,14 +18,10 @@
 	</div>
 
 	<div class="flex flex-row justify-end text-2xl relative bottom-5 right-3">
-		<button
-			class="mr-2 bg-white rounded-full px-3 shadow-sm min"
-			id="min-1"
-			on:click={() => handleMin('1')}>-</button
+		<button class="mr-2 bg-white rounded-full px-3 shadow-sm min" id="min-1" on:click={() => {}}
+			>-</button
 		>
 		<h1 class="mr-2 amount" id="amount-1">2</h1>
-		<button class="bg-white rounded-full px-2 shadow-sm plus" on:click={() => handlePlus('1')}
-			>+</button
-		>
+		<button class="bg-white rounded-full px-2 shadow-sm plus" on:click={() => {}}>+</button>
 	</div>
 </div>

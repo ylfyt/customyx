@@ -13,8 +13,6 @@
 </script>
 
 <script>
-	import Icon from 'svelte-fa';
-	import { faStar, faCar } from '@fortawesome/free-solid-svg-icons';
 	import VariantField from '../../components/VariantField.svelte';
 	import ProductImagesCarousel from '../../components/ProductImagesCarousel.svelte';
 	import StoreDetail from '../../components/StoreDetail.svelte';
@@ -88,7 +86,7 @@
 				<h1 class="mb-[5px] text-2xl font-bold">{product.name}</h1>
 				<div class="mb-[5px] flex items-center text-sm font-medium text-primary">
 					<p class="mr-1 ">{product.rating}</p>
-					<Icon class="mr-1 text-yellow-400" icon={faStar} />
+					<img src="/star.png" alt="" class="mr-1" />
 					<p>
 						({product.numRating > 1100
 							? `${Math.round((product.numRating / 1000) * 100) / 100}k`
@@ -109,15 +107,15 @@
 						<div class="w-3/4 flex items-start ">
 							<div class="ml-1 w-full">
 								<div class="flex">
-									<div class="w-[50px] ">From</div>
+									<div class=" " style="width:50px;">From</div>
 									<div class="font-medium">{product.address.city}</div>
 								</div>
 								<div class="flex">
-									<div class="w-[50px] ">To</div>
+									<div class=" " style="width:50px;">To</div>
 									<div class="font-bold">Kota Bandung</div>
 								</div>
 								<div class="flex">
-									<div class="w-[50px] ">Fee</div>
+									<div class=" " style="width:50px;">Fee</div>
 									<div class="font-medium">Rp0 - Rp20.000</div>
 								</div>
 							</div>
@@ -135,19 +133,22 @@
 					<div class="w-3/4 ">
 						<div class="flex items-center gap-2">
 							<button
-								class="btn text-xl font-bold border-[1px] w-[50px]"
+								class="btn text-xl font-bold border-[1px] "
+								style="width:50px;"
 								on:click={() => updateQuantity(-1)}>-</button
 							>
 							<input
 								type="number"
-								class="bg-secondary px-2 py-3 w-[100px] shadow-sm rounded-md text-center text-xl font-bold"
+								class="bg-secondary px-2 py-3 shadow-sm rounded-md text-center text-xl font-bold"
+								style="width:100px;"
 								bind:value={quantity}
 								min="1"
 								on:change={updateTest}
 							/>
 
 							<button
-								class="btn text-xl font-bold border-[1px] w-[50px]"
+								class="btn text-xl font-bold border-[1px]"
+								style="width:50px;"
 								on:click={() => updateQuantity(1)}>+</button
 							>
 						</div>

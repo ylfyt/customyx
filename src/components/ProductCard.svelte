@@ -4,7 +4,8 @@
 
 <a
 	href="/product/{product.slug}"
-	class="product-card h-[400px] w-[200px] mr-3 mb-7 group hover:shadow-2xl hover:cursor-pointer rounded-3xl bg-secondary shadow-xl overflow-hidden"
+	style="width:200px;height:400px;"
+	class="product-card mr-3 mb-7 group hover:shadow-2xl hover:cursor-pointer rounded-3xl bg-secondary shadow-xl overflow-hidden"
 >
 	<img src={product.images[0].url} alt="" class="w-full bg-white h-4/6" />
 	<div class="product w-11/12 mx-auto">

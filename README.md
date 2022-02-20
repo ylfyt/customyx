@@ -5,7 +5,7 @@
 1. Restore all dependency
 
 ```
-npm run install
+npm install
 ```
 
 2. Run server

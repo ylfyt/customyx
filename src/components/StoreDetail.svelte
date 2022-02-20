@@ -1,15 +1,12 @@
 <script>
-	import Icon from 'svelte-fa';
-	import { faStar } from '@fortawesome/free-solid-svg-icons';
-
 	export let store;
 
 	const imageSize = 100;
 </script>
 
 <div class="flex ">
-	<div class="w-[125px]">
-		<img class="rounded-full w-[{imageSize}px] h-[{imageSize}px]" src={store.image} alt="" />
+	<div class="" style="width:125px;">
+		<img class="rounded-full" style="width:100px;height:100px;" src={store.image} alt="" />
 	</div>
 	<div class="flex justify-between w-full ml-[20px]">
 		<div class="flex flex-col">
@@ -24,7 +21,7 @@
 			<div class="mt-[10px]">
 				<div class="mb-[5px] flex items-center text-sm font-medium text-textColorSecondary">
 					<p class="mr-1 ">{store.rating}</p>
-					<Icon class="mr-1 text-yellow-400" icon={faStar} />
+					<img src="/star.png" alt="" class="mr-1" />
 					<p>
 						({store.numRating > 1100
 							? `${Math.round((store.numRating / 1000) * 100) / 100}k`
