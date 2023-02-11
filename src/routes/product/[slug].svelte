@@ -18,6 +18,7 @@
 	import StoreDetail from '../../components/StoreDetail.svelte';
 	import ProductSpec from '../../components/ProductSpec.svelte';
 	import ProductDescription from '../../components/ProductDescription.svelte';
+  import { base } from '$app/paths'
 
 	export let product;
 	let quantity = 1;
@@ -86,7 +87,7 @@
 				<h1 class="mb-[5px] text-2xl font-bold">{product.name}</h1>
 				<div class="mb-[5px] flex items-center text-sm font-medium text-primary">
 					<p class="mr-1 ">{product.rating}</p>
-					<img src="/star.png" alt="" class="mr-1" />
+					<img src={`${base}/star.png`} alt="" class="mr-1" />
 					<p>
 						({product.numRating > 1100
 							? `${Math.round((product.numRating / 1000) * 100) / 100}k`

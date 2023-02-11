@@ -1,6 +1,6 @@
 <script>
 	import OngoingCard from '../../components/OngoingCard.svelte';
-	import CartCard from '../../components/CartCard.svelte';
+	import { base } from '$app/paths'
 
 	function handleMin(id) {
 		var amount = document.getElementById('amount-' + id).innerText;
@@ -33,7 +33,7 @@
 
 					<div class="flex flex-row h-36 relative" style="">
 						<div
-							style="background-image: url('/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;"
+							style={`background-image: url('${base}/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;`}
 							class="h-3/4 w-1/6 relative left-10"
 						/>
 						<div class="desc relative left-12">
@@ -66,7 +66,7 @@
 
 					<div class="flex flex-row h-36 relative" style="">
 						<div
-							style="background-image: url('/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;"
+							style={`background-image: url('${base}/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;`}
 							class="h-3/4 w-1/6 relative left-10"
 						/>
 						<div class="desc relative left-12">
@@ -94,7 +94,7 @@
 				<div class="checkout h-14 text-right mr-8 mt-8">
 					<p class="font-bold text-2xl mb-2">Total : Rp<span id="total-price">54.000</span></p>
 					<button class="font-bold bg-white border-2 px-2 py-1 rounded-xl shadow-lg"
-						>Checkout<img src="/checkout.png" class="inline-block h-6" alt="" /></button
+						>Checkout<img src={`${base}/checkout.png`} class="inline-block h-6" alt="" /></button
 					>
 				</div>
 			</div>

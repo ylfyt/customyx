@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths'
 	export let images;
 
 	let idx = 0;
@@ -17,7 +18,7 @@
 		{#each images as img, i}
 			<div class={i === idx ? 'mySlides fade block' : 'mySlides fade hidden'}>
 				<div class="numbertext text-textColorPrimary">{i + 1} / {num}</div>
-				<img src={img.url} class="h-[400px]" style="width:100%" alt="" />
+				<img src={base + '/' + img.url} class="h-[400px]" style="width:100%" alt="" />
 				<div class="text text-textColorPrimary">{img.caption}</div>
 			</div>
 		{/each}

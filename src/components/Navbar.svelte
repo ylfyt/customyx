@@ -1,8 +1,12 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <header class="flex justify-center sticky top-0 z-50 bg-cream1">
 	<nav class="flex flex-wrap items-center justify-between w-4/5 py-[10px] text-lg text-gray-700  ">
 		<div class="">
-			<a href="/">
-				<img class="nav-logo ml-5" src="/logolands.png" alt="" />
+			<a href={`${base}/`}>
+				<img class="nav-logo ml-5" src={`${base}/logolands.png`} alt="" />
 			</a>
 		</div>
 
@@ -34,16 +38,16 @@
 				<li>
 					<a
 						class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat"
-						href="/dashboard">Dashboard</a
+						href={`${base}/dashboard`}>Dashboard</a
 					>
 				</li>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="/product"
+					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href={`${base}/product`}
 						>Product</a
 					>
 				</li>
 				<li>
-					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href="/about"
+					<a class="md:p-4 py-2 block hover:text-textColorPrimary-400 text-red-hat" href={`${base}/about`}
 						>About</a
 					>
 				</li>

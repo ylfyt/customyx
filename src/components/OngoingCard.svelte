@@ -1,7 +1,11 @@
+<script>
+  import { base } from '$app/paths'
+</script>
+
 <div class="ongoing-card w-11/12 shadow-lg bg-secondary mx-auto h-48 rounded-lg mb-5">
 	<div class="flex flex-row h-full relative" style="">
 		<div
-			style="background-image: url('/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;"
+			style={`background-image: url('${base}/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;`}
 			class="h-3/4 w-1/6 relative left-10 my-auto"
 		/>
 		<div class="desc relative left-12 my-auto">

@@ -2,6 +2,7 @@
 	import CategCard from '../../components/CategCard.svelte';
 	import ProductCard from '../../components/ProductCard.svelte';
 	import db from '../../utils/db';
+  import { base } from '$app/paths'
 
 	const products = db.findAllProduct();
 </script>
@@ -10,7 +11,7 @@
 	<div class="container ">
 		<div class="search-filter flex justify-center flex-row h-11">
 			<a href="#">
-				<img src="/filter.png" alt="filter" class="h-11 " />
+				<img src={`${base}/filter.png`} alt="filter" class="h-11 " />
 			</a>
 
 			<form action="" class="ml-5 relative ">
@@ -23,13 +24,13 @@
 					placeholder="   Search Desired Costume Product..."
 				/>
 				<a href="#" type="submit" class="relative right-12 top-1"
-					><img src="/search.png" class="h-6 opacity-50" alt="" /></a
+					><img src={`${base}/search.png`} class="h-6 opacity-50" alt="" /></a
 				>
 			</form>
 		</div>
 
 		<div class="banner mx-auto flex flex-row bg-blue-500 mt-6 rounded-xl w-11/12 h-60">
-			<img src="/img/banner.jpg" class="w-full" alt="" />
+			<img src={`${base}/img/banner.jpg`} class="w-full" alt="" />
 		</div>
 
 		<div class="category w-11/12 mx-auto mt-5">

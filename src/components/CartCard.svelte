@@ -1,3 +1,7 @@
+<script>
+  import { base } from '$app/paths'
+</script>
+
 <div class="cart-card w-11/12 bg-blue-500 mx-auto h-48 rounded-lg mb-5">
 	<div class="flex flex-row h-1/12 justify-between">
 		<strong class="text-xl align-center cursor-pointer cart-del ml-1">&times;</strong>
@@ -6,7 +10,7 @@
 
 	<div class="flex flex-row h-36 relative" style="">
 		<div
-			style="background-image: url('/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;"
+			style={`background-image: url('${base}/electronic.png'); background-position: center; background-size: contain; background-repeat: no-repeat; background-color: white;`}
 			class="h-3/4 w-1/6 relative left-10"
 		/>
 		<div class="desc relative left-12">

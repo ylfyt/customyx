@@ -1,4 +1,6 @@
 <script>
+  import { base } from '$app/paths'
+
 	let defaultTransform = 0;
 	let slider;
 
@@ -44,7 +46,7 @@
 			</div>
 		</div>
 		<div>
-			<img src="city.png" class="land-logo mx-auto mt-5" />
+			<img src={`${base}/city.png`} class="land-logo mx-auto mt-5" />
 		</div>
 	</div>
 </section>
@@ -62,7 +64,7 @@
 					class="flex items-center justify-start transition ease-out duration-700"
 				>
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-0">
-						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
+						<img src={`${base}/gifts.png`} alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Electronics</h2>
@@ -70,7 +72,7 @@
 					</div>
 
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
+						<img src={`${base}/gifts.png`} alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Crafts and Gifts</h2>
@@ -78,28 +80,28 @@
 					</div>
 
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
+						<img src={`${base}/gifts.png`} alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Sports</h2>
 						</div>
 					</div>
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
+						<img src={`${base}/gifts.png`} alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Private Needs</h2>
 						</div>
 					</div>
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
+						<img src={`${base}/gifts.png`} alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Kids</h2>
 						</div>
 					</div>
 					<div class="bg-white rounded-lg category-card shadow-lg flex-shrink-0 mx-5">
-						<img src="gifts.png" alt="Sea" class="rounded-t-lg" />
+						<img src={`${base}/gifts.png`} alt="Sea" class="rounded-t-lg" />
 
 						<div class="p-6">
 							<h2 class="mb-2 text-md text-center">Tools and Machines</h2>

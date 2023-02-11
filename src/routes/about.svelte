@@ -1,3 +1,7 @@
+<script>
+  import { base } from '$app/paths'
+</script>
+
 <section class="text-gray-700 body-font">
 	<div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
 		<div
@@ -14,7 +18,7 @@
 			</p>
 		</div>
 		<div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-			<img class="object-cover object-center rounded" alt="hero" src="customyx.png" />
+			<img class="object-cover object-center rounded" alt="hero" src={`${base}/customyx.png`} />
 		</div>
 	</div>
 </section>
@@ -29,7 +33,7 @@
 				<img
 					alt="team"
 					class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-					src="arvin.jpg"
+					src={`${base}/arvin.jpg`}
 				/>
 				<div class="flex-grow">
 					<h2 class="text-gray-900 title-font font-medium">Almeiza Arvin Muzaki</h2>
@@ -42,7 +46,7 @@
 				<img
 					alt="team"
 					class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-					src="aria.jpg"
+					src={`${base}/aria.jpg`}
 				/>
 				<div class="flex-grow">
 					<h2 class="text-gray-900 title-font font-medium">Aria Bachrul Ulum Berlian</h2>
@@ -55,7 +59,7 @@
 				<img
 					alt="team"
 					class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-					src="yudi.jpg"
+					src={`${base}/yudi.jpg`}
 				/>
 				<div class="flex-grow">
 					<h2 class="text-gray-900 title-font font-medium">Yudi Alfayat</h2>
